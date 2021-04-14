@@ -125,9 +125,9 @@ GUARD &5800
 .seek
 {
     \ Assume paused!
-    \ lda #&ff:sta rocket_fast_mode     ; turbo button on!
+    lda #&ff:sta rocket_fast_mode     ; turbo button on!
     jsr vgm_seek
-    \ lda #0:sta rocket_fast_mode       ; turbo button off!
+    lda #0:sta rocket_fast_mode       ; turbo button off!
     rts
 }
 
@@ -179,3 +179,5 @@ ALIGN 256
 PRINT ~vgm_data
 
 SAVE "Main", start, end, entry
+
+PUTBASIC "rocket.bas", "rocket"
